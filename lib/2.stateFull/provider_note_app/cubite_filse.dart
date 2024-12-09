@@ -1,26 +1,29 @@
-import 'package:home_work/2.stateFull/cubit_todo_app/cubit_state.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app/dbHelper.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app/note_model.dart';
+import 'package:home_work/2.stateFull/provider_note_app/cubit_state.dart';
+import 'package:home_work/2.stateFull/provider_note_app/dbHelper.dart';
+import 'package:home_work/2.stateFull/provider_note_app/note_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CubitNoteFilse extends Cubit<CubitSate> {
+class ProviderNoteFilse extends ChangeNotifier {
   DbHelperCubitNote dbHelperCubitNote;
 
   List<NoteModelCN> mDataF = [];
-  CubitNoteFilse({required this.dbHelperCubitNote}) : super(CubitSate(mDataS: []) );
+  ProviderNoteFilse({required this.dbHelperCubitNote}) ;
 
   void addNotes(NoteModelCN noteF) async {
     bool check = await dbHelperCubitNote.addNotes(noteF);
 
     if (check) {
       mDataF = await dbHelperCubitNote.fectsNotes();
-      emit(CubitSate(mDataS: mDataF));
+      notifyListeners();
     }
   }
 
+  List<NoteModelCN> getNots()=>mDataF;
+
   void initalizeNotes() async {
     mDataF = await dbHelperCubitNote.fectsNotes();
-    emit(CubitSate(mDataS: mDataF));
+     notifyListeners();
   }
 
   void updateNotes({required int updateIdF,required String titleF,required String descF}) async{
@@ -31,18 +34,16 @@ class CubitNoteFilse extends Cubit<CubitSate> {
          updateIdDU: updateIdF,);
      if(check){
        mDataF = await dbHelperCubitNote.fectsNotes();
-       emit( CubitSate(mDataS: mDataF));
+       notifyListeners();
      }
   }
-
-
 
   void deletnotes({required int deletIdF} )async {
 
     bool cehck = await dbHelperCubitNote.deletNotes(deletIdD: deletIdF);
     if (cehck) {
     mDataF = await dbHelperCubitNote.fectsNotes();
-    emit(CubitSate(mDataS: mDataF));
+    notifyListeners();
     }
   }
  }

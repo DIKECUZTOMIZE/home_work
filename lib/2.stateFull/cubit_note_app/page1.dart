@@ -15,19 +15,11 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
-// DbHelperCubitNote dbHelperCubitNote =DbHelperCubitNote.getInsatnace();
-
-
- // List<NoteModelCN> mData1 = [];
-
-  DateFormat dtFormate = DateFormat.MMMd();
 
   @override
   void initState() {
-
     super.initState();
     context.read<CubitNoteFilse>().initalizeNotes();
-     // getNotes();
   }
 
 
@@ -46,14 +38,7 @@ var  mData1=  context.watch<CubitNoteFilse>().state.mDataS;
               //leading: mData1['${index++}'],
 
               title: Text(mData1[index].titleM),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(mData1[index].descM),
-
-                   Text(dtFormate.format(DateTime.fromMillisecondsSinceEpoch(int.parse(mData1[index].created_atM))))
-                ],
-              ),
+              subtitle: Text(mData1[index].descM),
               trailing: SizedBox(
                 width: 100,
                 child: Row(
@@ -68,8 +53,6 @@ var  mData1=  context.watch<CubitNoteFilse>().state.mDataS;
                               id2: mData1[index].idM,
                               title2: mData1[index].titleM,
                               desc2: mData1[index].descM,
-
-
                             ),));
                       },
                       child: Icon(Icons.edit),
@@ -85,12 +68,7 @@ var  mData1=  context.watch<CubitNoteFilse>().state.mDataS;
                            context.watch()<CubitNoteFilse>().initalizeNotes();
                           //
                           Navigator.pop(context);
-
-
-
-                          // context.read<CubitNoteFilse>().deletnotes(
-                          //     deletIdF: mData1[index].idM!);
-                        },
+                          },
                         child: Icon(
                           Icons.delete,
                           color: Colors.red,

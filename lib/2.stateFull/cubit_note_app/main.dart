@@ -1,4 +1,4 @@
-import 'package:home_work/2.stateFull///cubit_note_app/cubite_filse.dart';
+import 'package:home_work/2.stateFull/cubit_note_app/cubite_filse.dart';
 import 'package:home_work/2.stateFull/cubit_note_app/dbHelper.dart';
 import 'package:home_work/2.stateFull/cubit_note_app/page1.dart';
 import 'package:flutter/material.dart';

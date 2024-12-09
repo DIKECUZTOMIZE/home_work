@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:home_work/2.stateFull/cubit_todo_app/cubit_state.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app/note_model.dart';
+import 'package:home_work/2.stateFull/provider_todo_app/cubit_state.dart';
+import 'package:home_work/2.stateFull/provider_todo_app/note_model.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';

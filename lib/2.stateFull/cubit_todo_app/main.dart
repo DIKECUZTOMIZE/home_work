@@ -1,6 +1,6 @@
-import 'package:home_work/2.stateFull/cubit_todo_app//cubite_filse.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app//dbHelper.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app//page1.dart';
+import 'package:home_work/2.stateFull/cubit_todo_app/cubite_filse.dart';
+import 'package:home_work/2.stateFull/cubit_todo_app/dbHelper.dart';
+import 'package:home_work/2.stateFull/cubit_todo_app/page1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

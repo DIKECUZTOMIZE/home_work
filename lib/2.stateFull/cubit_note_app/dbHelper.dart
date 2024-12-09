@@ -35,7 +35,7 @@ class DbHelperCubitNote {
       version: 1,
       onCreate: (db, version) {
         db.execute(
-            'create table $NOTE_TABLE ( $NOTE_COLUMN_ID integer primary key autoIncrement, $NOTE_COLUMN_TITLE text, $NOTE_COLUMN_DESC text, $NOTE_COLUMN_CREATED_AT text)');
+            'create table $NOTE_TABLE ( $NOTE_COLUMN_ID integer primary key autoIncrement, $NOTE_COLUMN_TITLE text, $NOTE_COLUMN_DESC text)');
       },
     );
   }

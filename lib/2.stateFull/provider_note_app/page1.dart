@@ -1,8 +1,8 @@
 
-import 'package:home_work/2.stateFull/cubit_todo_app/cubite_filse.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app/dbHelper.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app/note_model.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app/page2.dart';
+import 'package:home_work/2.stateFull/provider_note_app/cubite_filse.dart';
+import 'package:home_work/2.stateFull/provider_note_app/dbHelper.dart';
+import 'package:home_work/2.stateFull/provider_note_app/note_model.dart';
+import 'package:home_work/2.stateFull/provider_note_app/page2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -18,7 +18,7 @@ class _Page1State extends State<Page1> {
 // DbHelperCubitNote dbHelperCubitNote =DbHelperCubitNote.getInsatnace();
 
 
- // List<NoteModelCN> mData1 = [];
+  List<NoteModelCN> mData1 = [];
 
   DateFormat dtFormate = DateFormat.MMMd();
 
@@ -26,14 +26,13 @@ class _Page1State extends State<Page1> {
   void initState() {
 
     super.initState();
-    context.read<CubitNoteFilse>().initalizeNotes();
-     // getNotes();
+    context.read<ProviderNoteFilse>().initalizeNotes();
   }
 
 
   @override
   Widget build(BuildContext context) {
-var  mData1=  context.watch<CubitNoteFilse>().state.mDataS;
+ mData1=  context.watch<ProviderNoteFilse>().getNots();
     return Scaffold(
       appBar: AppBar(
         title: Text('Page1'),
@@ -46,14 +45,7 @@ var  mData1=  context.watch<CubitNoteFilse>().state.mDataS;
               //leading: mData1['${index++}'],
 
               title: Text(mData1[index].titleM),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(mData1[index].descM),
-
-                   Text(dtFormate.format(DateTime.fromMillisecondsSinceEpoch(int.parse(mData1[index].created_atM))))
-                ],
-              ),
+              subtitle: Text(mData1[index].descM),
               trailing: SizedBox(
                 width: 100,
                 child: Row(
@@ -80,9 +72,9 @@ var  mData1=  context.watch<CubitNoteFilse>().state.mDataS;
                     InkWell(
                         onTap: () async{
 
-                          context.read<CubitNoteFilse>().deletnotes(deletIdF:mData1[index].idM!);
+                          context.read<ProviderNoteFilse>().deletnotes(deletIdF:mData1[index].idM!);
                           // context.watch()<CubitNoteFilse>().deletnotes(deletIdF:mData1[index].idM!);
-                           context.watch()<CubitNoteFilse>().initalizeNotes();
+                           context.watch()<ProviderNoteFilse>().initalizeNotes();
                           //
                           Navigator.pop(context);
 

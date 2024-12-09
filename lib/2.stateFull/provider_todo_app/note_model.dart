@@ -1,4 +1,4 @@
-import 'package:home_work/2.stateFull/cubit_todo_app/dbHelper.dart';
+import 'package:home_work/2.stateFull/provider_todo_app/dbHelper.dart';
 
 class NoteModelCN {
   int? idM;

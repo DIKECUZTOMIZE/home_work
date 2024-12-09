@@ -1,6 +1,6 @@
-import 'package:home_work/2.stateFull///////cubit_note_app/cubit_state.dart';
-import 'package:home_work/2.stateFull/////cubit_note_app/dbHelper.dart';
-import 'package:home_work/2.stateFull////cubit_note_app/note_model.dart';
+import 'package:home_work/2.stateFull/cubit_note_app/cubit_state.dart';
+import 'package:home_work/2.stateFull/cubit_note_app/dbHelper.dart';
+import 'package:home_work/2.stateFull/cubit_note_app/note_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CubitNoteFilse extends Cubit<CubitSate> {

@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:home_work/2.stateFull/cubit_todo_app/cubit_state.dart';
-import 'package:home_work/2.stateFull/cubit_todo_app/note_model.dart';
+import 'package:home_work/2.stateFull/provider_note_app/cubit_state.dart';
+import 'package:home_work/2.stateFull/provider_note_app/note_model.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
@@ -35,7 +35,7 @@ class DbHelperCubitNote {
       version: 1,
       onCreate: (db, version) {
         db.execute(
-            'create table $NOTE_TABLE ( $NOTE_COLUMN_ID integer primary key autoIncrement, $NOTE_COLUMN_TITLE text, $NOTE_COLUMN_DESC text, $NOTE_COLUMN_CREATED_AT text)');
+            'create table $NOTE_TABLE ( $NOTE_COLUMN_ID integer primary key autoIncrement, $NOTE_COLUMN_TITLE text, $NOTE_COLUMN_DESC text)');
       },
     );
   }
