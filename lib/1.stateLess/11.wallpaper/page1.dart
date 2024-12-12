@@ -60,12 +60,7 @@ class page1 extends StatelessWidget{
                          color: Colors.green,
                          borderRadius: BorderRadius.circular(10),
                        ),
-
-
                      ),
-
-
-
                    ],
                  ),
                ),

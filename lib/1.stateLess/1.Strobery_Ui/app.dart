@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:home_work/1.stateLess//1.Strobery_Ui/homePage.dart';
+import 'package:home_work/1.stateLess/1.Strobery_Ui/homePage.dart';
 
 void main(){
   runApp(StroberryApp() );
