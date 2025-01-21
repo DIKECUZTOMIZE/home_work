@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:home_work/1.stateLess/2.Login_and_Password/1.Ui/l_pcolors_page.dart';
+import 'package:home_work/1.stateLess/2.Login_and_Password/1.Ui/uiHelper.dart';
 
 class LoginAndPasswordBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+    return Scaffold(
+      body:  Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 21),
         child: Column(children: [
-          //1.Cover page:
           Container(
-              height: 470,
+              height:400,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.vertical(
@@ -17,112 +19,102 @@ class LoginAndPasswordBody extends StatelessWidget {
                 ),
                 color: Color(0xffa677ef),
               ),
-              child: Column(children: [
-                //1.Column:
-                //Login Text
-                Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.only(top: 90),
-                  child: Text("Login",
-                      style: TextStyle(
-                          color: Color(0xffffffff),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center),
-                ),
+              child: Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 21),
+                child: Column(
 
-                //Email and Mobile :
-                Container(
-                    margin: EdgeInsets.only(top: 30, bottom: 30, left: 30, right: 30),
+                    children: [
+
+                  SizedBox(height: 100,),
+
+                  Center(
+                    child: Text("Login",
+                        style: TextStyle(
+                            color: Color(0xffffffff),
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center),
+                  ),
+
+
+                  SizedBox(
                     height: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xffffffff),
-                      border: Border.all(color: Colors.white.withOpacity(.2)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.account_circle,color: Colors.black.withOpacity(.5),),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(color: Colors.white)
+                        ),
+                        fillColor: mColors.PrimaryColors,
 
-                    child: Padding(padding: EdgeInsets.only(left: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.manage_accounts_rounded,
-                            color: Colors.black.withOpacity(.2),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Text(
-                            "Email,MobileNo",
-                            style:
-                                TextStyle(color: Colors.black.withOpacity(.2)),
-                          )
-                        ],
+                        filled: true,
+                        hintText: "Email,MobileNo",
+                        hintStyle: TextStyle(color: Colors.black.withOpacity(.5))
                       ),
-                    )),
-
-                //Password:
-                Container(
-                  height: 40,
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  decoration: BoxDecoration(
-                      color: Color(0xffffffff),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 20),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.lock,
-                          color: Color(0xff000000).withOpacity(.2),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text(
-                          "Password",
-                          style: TextStyle(
-                              color: Color(0xff000000).withOpacity(.2)),
-                        ),
-                      ],
                     ),
                   ),
-                ),
 
-                //Space:
-                SizedBox(
-                    height: 60),
+                  mSpacing(),
 
-                //Login Button:
-                Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  SizedBox(
+                    height: 40,
+                    child: TextField(
 
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Login',
-                      style: TextStyle(
-                          color: Colors.white.withOpacity(.8),
-                          fontWeight: FontWeight.bold),
+
+                      decoration: InputDecoration(
+
+                        prefixIcon: Icon(Icons.lock, color: Colors.black.withOpacity(.5),),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(color: Colors.white)
+                        ),
+                        fillColor: mColors.PrimaryColors,
+
+                        filled: true,
+                        hintText: "Password",
+                        hintStyle: TextStyle(color: Colors.black.withOpacity(.5))
+                      ),
                     ),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            WidgetStateProperty.all(Color(0xff2f49d8))),
                   ),
-                ),
 
-                //Space:
-                SizedBox(
-                  height: 15,
-                ),
+                   mSpacing(),
 
-                //Forget Text
-                Text(
-                  "Forgrt your passeord?",
-                  style: TextStyle(
-                      color: Color(0xffffffff), fontWeight: FontWeight.bold),
-                )
-              ])),
+                  //Login Button:
+                  Container(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Login',
+                        style: TextStyle(
+                            color: Colors.white.withOpacity(.8),
+                            fontWeight: FontWeight.bold),
+                      ),
+                      style: ButtonStyle(
+                          backgroundColor:
+                              WidgetStateProperty.all(Color(0xff2f49d8))),
+                    ),
+                  ),
+
+                  //Space:
+                  SizedBox(
+                    height: 11,
+                  ),
+
+                  //Forget Text
+                  Text(
+                    "Forgrt your passeord?",
+                    style: TextStyle(
+                        color: Color(0xffffffff), fontWeight: FontWeight.bold),
+                  )
+                ]),
+              )),
 
 
           //2.Column:
@@ -226,7 +218,8 @@ class LoginAndPasswordBody extends StatelessWidget {
             ),
           )
         ]
-          )
+          ),
+      ),
     );
   }
 }

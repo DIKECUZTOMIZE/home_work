@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_work/1.stateLess/1.Strobery_Ui/homePage.dart';
 
 void main(){
-  runApp(StroberryApp() );
+  runApp(StroberryApp());
 }
 class StroberryApp extends StatelessWidget{
   @override

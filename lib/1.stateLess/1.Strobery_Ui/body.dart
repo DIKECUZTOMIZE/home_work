@@ -4,14 +4,36 @@ import 'package:flutter/cupertino.dart';
 class StroberryBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.all(20),
+    if (MediaQuery.of(context).orientation == Orientation.landscape) {
+      return Row(
+      children: [
+
+        Expanded(child:getOneUi()),
+
+        SizedBox(width: 11,),
+
+        Expanded(child:SingleChildScrollView(child:  getTowUi())),
+      ],
+    );
+    } else {
+      return Column(
+      children: [
+        getOneUi(),
+        getTowUi()
+      ],
+    );
+    }
+  }
+
+  getOneUi(){
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           //Image:
           Container(
 
-            height: 200,
+            height: 300,
             width: double.infinity,
             decoration: BoxDecoration(
 
@@ -21,11 +43,18 @@ class StroberryBody extends StatelessWidget {
                     fit: BoxFit.cover)),
           ),
 
-          //space:
-          SizedBox(
-            height: 20,
-          ),
+        ],
+      ),
+    );
+  }
 
+  getTowUi(){
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+
+          SizedBox(height: 11,),
           //Name Details:
           Container(
             child: Column(
@@ -38,9 +67,9 @@ class StroberryBody extends StatelessWidget {
                   child: Text(
                     "Strawberry Pavlova",
                     style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        ),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   decoration: BoxDecoration(
@@ -67,10 +96,10 @@ class StroberryBody extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       "Pavlova is meringue-based"
-                      "dessert named after the Russian"
-                      "ballerine a crisp crust and"
-                      "soft,kight inside,topped with fuirt"
-                      "and whipped cream.",
+                          "dessert named after the Russian"
+                          "ballerine a crisp crust and"
+                          "soft,kight inside,topped with fuirt"
+                          "and whipped cream.",
                       style: TextStyle(fontSize: 20,),
                       textAlign: TextAlign.center,
                     ),
@@ -88,8 +117,8 @@ class StroberryBody extends StatelessWidget {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color( 0XFFE6F0FA),
-                      border: Border.all(color: Colors.black),
-                      ),
+                    border: Border.all(color: Colors.black),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -125,7 +154,7 @@ class StroberryBody extends StatelessWidget {
                       Text(
                         "170 Reviews",
                         style: TextStyle(fontWeight: FontWeight.bold,
-                        fontSize: 17),
+                            fontSize: 17),
                       ),
                     ],
                   ),
@@ -139,7 +168,7 @@ class StroberryBody extends StatelessWidget {
                 //Icons
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                      border: Border.all(color: Colors.black),
                       color: Color(0XFFE6F0FA)
                   ),
                   child: Padding(
